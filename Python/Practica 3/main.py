@@ -1,0 +1,10 @@
+from Pilas import Pila
+pila = Pila(3)
+pila.push(10)
+pila.push(20)
+pila.push(30)
+print("Elemento en la cima:", pila.peek())
+print("Sacando elemento:", pila.pop())
+print("Elemento en la cima:", pila.peek())
+print("Pila vacía", pila.isEmpty())
+print("Pila llena", pila.isFull())
