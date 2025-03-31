@@ -1,0 +1,34 @@
+package Ejercicio 1;
+public class Main {
+    public static void main(String[] args) {
+        float[] a = {1, 2}; 
+        float[] b = {3, 4}; 
+
+        // Para saber si ambos vectores son del mismo tamaño
+        if (a.length != b.length) {
+            System.out.println("Los vectores deben ser del mismo tamaño.");
+            return; 
+        }
+
+        // producto punto
+        float productodePunto = AlgebraVectorial.elPunto(a, b);
+
+        // perpendicularidad
+        if (productodePunto == 0) {
+            System.out.println("el vector A es ortogonal al vector B.");
+        } else {
+            System.out.println("el vector A no es ortogonal al vector B.");
+        }
+
+        //  paralelismo
+        if (AlgebraVectorial.Vparalelos(a, b)) {
+            System.out.println("el vector A es paralelo al vector B.");
+        } else {
+            System.out.println("el vector A no es paralelo al vector B.");
+        }
+
+        // componente de a en la dirección de b
+        float componenteEnB = AlgebraVectorial.componenteEnB(a, b);
+        System.out.println("la componente de A en la direccion de B es: " + componenteEnB);
+    }
+}

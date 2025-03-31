@@ -1,0 +1,51 @@
+package Ejercicio2;
+
+public class Vector {
+    private float a1;
+    private float a2;
+    private float a3;
+
+    public Vector(float a1, float a2, float a3) {
+        this.a1 = a1;
+        this.a2 = a2;
+        this.a3 = a3;
+    }
+
+    public Vector suma(Vector b) {
+        return new Vector(this.a1 + b.a1, this.a2 + b.a2, this.a3 + b.a3);
+    }
+
+    public Vector multiplicarEscalar(float r) {
+        return new Vector(r * this.a1, r * this.a2, r * this.a3);
+    }
+
+    public float longitud() {
+        return (float) Math.sqrt(a1 * a1 + a2 * a2 + a3 * a3);
+    }
+
+    public Vector normalizar() {
+        float longitud = longitud();
+        return new Vector(a1 / longitud, a2 / longitud, a3 / longitud);
+    }
+
+    public float productoEscalar(Vector b) {
+        return this.a1 * b.a1 + this.a2 * b.a2 + this.a3 * b.a3;
+    }
+
+    public Vector productoVectorial(Vector b) {
+        return new Vector(
+            this.a2 * b.a3 - this.a3 * b.a2,
+            this.a3 * b.a1 - this.a1 * b.a3,
+            this.a1 * b.a2 - this.a2 * b.a1
+        );
+    }
+
+    public boolean esOrtogonal(Vector b) {
+        return this.productoEscalar(b) == 0;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + a1 + ", " + a2 + ", " + a3 + ")";
+    }
+}

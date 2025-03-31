@@ -1,0 +1,30 @@
+package Ejercicio2;
+
+public class Main {
+    public static void main(String[] args) {
+        Vector a = new Vector(1, 2, 3);
+        Vector b = new Vector(4, 5, 6);
+
+        Vector suma = a.suma(b);
+        System.out.println("a)suma de A y B: " + suma);
+
+        Vector escalarMultiplicado = a.multiplicarEscalar(2);
+        System.out.println("b)A multiplicado por 2: " + escalarMultiplicado);
+
+        float longitudA = a.longitud();
+        System.out.println("c(Longitud de A: " + longitudA);
+
+        Vector normalA = a.normalizar();
+        System.out.println("d)vector A normalizado: " + normalA);
+
+        float productoEscalar = a.productoEscalar(b);
+        System.out.println("e)producto escalar de A y B: " + productoEscalar);
+
+        Vector productoVectorial = a.productoVectorial(b);
+        System.out.println("f)producto vectorial de A y B: " + productoVectorial);
+
+        boolean ortogonal = a.esOrtogonal(b);
+        System.out.println("A es ortogonal a B? " + ortogonal);
+
+    }
+}

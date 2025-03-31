@@ -1,0 +1,38 @@
+package Ejercicio 1;
+
+public class AlgebraVectorial {
+    // producto punto 
+    public static float elPunto(float[] a, float[] b) {
+        float resultado = 0; 
+        for (int i = 0; i < a.length; i++) {
+            resultado += a[i] * b[i]; 
+        }
+        return resultado; 
+    }
+
+    //paralelos
+    public static boolean Vparalelos(float[] a, float[] b) {
+        if (elPunto(a, a) == 0 || elPunto(b, b) == 0) {
+            return false;
+        }
+        float r = a[0] / b[0];
+
+        for (int i = 1; i < a.length; i++) {
+            if (b[i] == 0) {
+                return a[i] == 0; 
+            }
+            // Comparar las razones
+            if (a[i] / b[i] != r) {
+                return false; 
+            }
+        }
+        return true; 
+    }
+
+    // componente de a en la dirección de b
+    public static float componenteEnB(float[] a, float[] b) {
+        float productoPunto = elPunto(a, b);
+        float magnitudB = elPunto(b, b); // b · b
+        return productoPunto / (float) Math.sqrt(magnitudB);
+    }
+}
